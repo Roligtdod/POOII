@@ -29,6 +29,7 @@ public class PedidoEncomienda extends Pedido implements Interfaz{
     public void calcularTiempoDeEntrega() {
         int tiempoEntrega = (int) (20 + getDistanciaKm()*1.5);
 
+        System.out.println("Dirección de entrega: "+getDireccionEntrega());
         System.out.println("Tiempo de entrega estimado: "+tiempoEntrega+" minutos");
         System.out.println("-----------------------------");
 

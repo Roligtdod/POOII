@@ -21,10 +21,12 @@ public class PedidoExpress extends Pedido implements Interfaz{
     @Override
     public void calcularTiempoDeEntrega() {
         if (getDistanciaKm() > 5){
+            System.out.println("Dirección de entrega: "+getDireccionEntrega());
             System.out.println("Tiempo de entrega estimado: "+(int) (15+(2 * getDistanciaKm()))+" minutos");
             System.out.println("------Pedido enviado------");
         }
         else{
+            System.out.println("Dirección de entrega: "+getDireccionEntrega());
             System.out.println("Tiempo de entrega estimado: "+(int) (10+(2 * getDistanciaKm()))+ " minutos ");
             System.out.println("------Pedido enviado------");
         }

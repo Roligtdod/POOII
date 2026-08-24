@@ -34,6 +34,7 @@ public class PedidoComida extends Pedido implements Interfaz{
     @Override
     public void calcularTiempoDeEntrega() {
 
+        System.out.println("Dirección de entrega: "+getDireccionEntrega());
         System.out.println("Tiempo de entrega estimado: "+(int) (15+2*getDistanciaKm()) + " minutos");
         System.out.println("------Pedido enviado------");
 
