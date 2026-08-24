@@ -5,8 +5,8 @@ public class PedidoEncomienda extends Pedido implements Interfaz{
     int peso;
     String embalaje;
 
-    public PedidoEncomienda(int idpedido, String direccionEntrega, String tipoDePedido, int peso, String embalaje) {
-        super(idpedido, direccionEntrega, tipoDePedido);
+    public PedidoEncomienda(int idpedido, String direccionEntrega, String tipoDePedido, double distanciaKm, int peso, String embalaje) {
+        super(idpedido, direccionEntrega, tipoDePedido, distanciaKm);
         this.peso = peso;
         this.embalaje = embalaje;
 
@@ -18,12 +18,19 @@ public class PedidoEncomienda extends Pedido implements Interfaz{
     }
 
     public void  AsignarRepartidor(String nombreRepartidor){
-        System.out.println("Peso del pedido :" + peso);
-        System.out.println("Embalaje del pedido :" + embalaje);
-        System.out.println("Asignando repartidor :" + nombreRepartidor);
-        System.out.println("------Encomienda enviada------");
+        System.out.println("-----------------------------");
+        System.out.println("Peso del pedido: " + peso);
+        System.out.println("Embalaje del pedido: " + embalaje);
+        System.out.println("Asignando repartidor: " + nombreRepartidor);
     }
 
 
+    @Override
+    public void calcularTiempoDeEntrega() {
+        int tiempoEntrega = (int) (20 + getDistanciaKm()*1.5);
 
+        System.out.println("Tiempo de entrega estimado: "+tiempoEntrega+" minutos");
+        System.out.println("-----------------------------");
+
+    }
 }

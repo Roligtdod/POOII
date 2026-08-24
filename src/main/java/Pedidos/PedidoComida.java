@@ -6,8 +6,8 @@ public class PedidoComida extends Pedido implements Interfaz{
     private final String mochilaTermica;
 
 
-    public PedidoComida(int idpedido, String direccionEntrega, String tipoDePedido, String mochilaTermica) {
-        super(idpedido, direccionEntrega, tipoDePedido);
+    public PedidoComida(int idpedido, String direccionEntrega, String tipoDePedido, double distanciaKm, String mochilaTermica) {
+        super(idpedido, direccionEntrega, tipoDePedido, distanciaKm);
         this.mochilaTermica = mochilaTermica;
 
     }
@@ -23,12 +23,22 @@ public class PedidoComida extends Pedido implements Interfaz{
         System.out.println("Verificando mochila termica");
         if(mochilaTermica.equals("no")){
             System.out.println("Rpartidor no cumple con la mochila termica");
+            System.out.println("----Favor asignar otro repartidor----");
         }
         else{
-            System.out.println("Asignando repartidor :" + nombreRepartidor);
-            System.out.println("------Pedido enviado------");
+            System.out.println("Asignando repartidor: " + nombreRepartidor);
         }
 
     }
+
+    @Override
+    public void calcularTiempoDeEntrega() {
+
+        System.out.println("Tiempo de entrega estimado: "+(int) (15+2*getDistanciaKm()) + " minutos");
+        System.out.println("------Pedido enviado------");
+
+    }
+
+
 
 }
