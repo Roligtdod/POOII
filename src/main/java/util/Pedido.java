@@ -1,4 +1,4 @@
-package Pedidos;
+package util;
 
 public abstract class Pedido implements Interfaz {
 
@@ -40,5 +40,6 @@ public abstract class Pedido implements Interfaz {
     }
 
     public abstract void calcularTiempoDeEntrega();
+    public abstract void MostrarResumen();
 
 }
